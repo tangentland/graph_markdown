@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# tldr daemon runtime state (.tldrignore itself is tracked config)
+.tldr/
+
+# Claude Code local overrides (agents/ and commands/ stay tracked)
+.claude/settings.local.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
