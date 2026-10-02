@@ -2,7 +2,7 @@
 # Lint this repo's own GMD docs — gmd dogfooding its own spec.
 #
 # Scope: the root doc set (README, SPEC, PRIMER, migration guide), the authoring
-# templates, and the bundled examples. Uses the in-repo linter directly rather
+# templates, the bundled examples, and the agent definitions. Uses the in-repo linter rather
 # than a vendored copy — this repo IS the canonical tooling.
 #
 # Exit non-zero on errors; warnings are informational.
@@ -20,4 +20,5 @@ cd "$ROOT"
 SCOPE=(README.md SPEC.md PRIMER.md gmd-migration-guide.md)
 [[ -d templates ]] && SCOPE+=(templates/)
 [[ -d examples ]] && SCOPE+=(examples/)
+[[ -d .claude ]] && SCOPE+=(.claude/)
 exec python3 "$LINTER" "${SCOPE[@]}" "$@"
