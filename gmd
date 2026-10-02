@@ -26,8 +26,9 @@ Subcommands:
          Scaffold a project for GMD authoring.
   lint   <file-or-dir> [...]
          Validate GMD docs. Exit 1 on errors.
-  audit  <file-or-dir> [...] [--fix] [--category C] [--quiet]
+  audit  <file-or-dir> [...] [--fix] [--manual] [--json] [--category C] [--quiet]
          Report GMD conformance gaps; --fix applies the safe repairs.
+         --manual lists only what --fix cannot; --json emits a JSONL work queue.
   slice  <file> "<query>" [--k N] [--hops N] [--budget-tokens N]
          Retrieve a relevant subset of a GMD doc (standalone, no rmx).
   version
