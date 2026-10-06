@@ -19,3 +19,9 @@ jobs:
       - name: Lint GMD docs
         run: |
           ./scripts/lint-gmd.sh
+      # The self-lint above cannot catch a DEMOTED gate: once the corpus is
+      # clean, a check that stopped checking reports the same zero. This runs
+      # the gates against fixtures that must fail.
+      - name: Lint gates (behaviour, not error counts)
+        run: |
+          python3 scripts/test-lint-gates.py
